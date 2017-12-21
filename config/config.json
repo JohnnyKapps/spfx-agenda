@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/agenda/AgendaWebPart.js",
+      "manifest": "./src/webparts/agenda/AgendaWebPart.manifest.json",
+      "outputPath": "./dist/agenda-web-part.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "AgendaWebPartStrings": "webparts/agenda/loc/{locale}.js"
+  }
+}

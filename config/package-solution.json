@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "agenda-client-side-solution",
+    "id": "793e747d-d456-4d0b-99e2-a203176c58c2",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/agenda.sppkg"
+  }
+}
