@@ -15,6 +15,7 @@ import { IAgendaProps } from './components/IAgendaProps';
 
 export interface IAgendaWebPartProps {
   quantity: number;
+  list: string;
 }
 
 export default class AgendaWebPart extends BaseClientSideWebPart<IAgendaWebPartProps> {
@@ -23,7 +24,8 @@ export default class AgendaWebPart extends BaseClientSideWebPart<IAgendaWebPartP
     const element: React.ReactElement<IAgendaProps > = React.createElement(
       Agenda,
       {
-        quantity: this.properties.quantity
+        quantity: this.properties.quantity,
+        list: this.properties.list
       }
     );
 
@@ -45,6 +47,9 @@ export default class AgendaWebPart extends BaseClientSideWebPart<IAgendaWebPartP
             {
               groupName: strings.BasicGroupName,
               groupFields: [
+                PropertyPaneTextField('list', {
+                  label: 'Titulo da lista'
+                }),
                 PropertyPaneSlider('quantity', {
                   label: 'Quantidade',
                   min:1,

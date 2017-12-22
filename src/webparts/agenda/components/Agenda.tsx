@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IAgendaProps } from './IAgendaProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import CardEvento from './CardEvento';
 
 import pnp from 'sp-pnp-js';
 
@@ -35,16 +36,17 @@ export default class Agenda extends React.Component<IAgendaProps, IAgendaState> 
     else{
       return (
         <div>
-          <h1>{this.state.events.length}</h1>
           <ul>
             {
               this.state.events.map(item => {
-                return <div>
-                    <a>
-                      <h2>{item.Title}</h2>
-                      <p>em {item.Location}</p>
-                    </a>
-                  </div>;
+              return (
+                <CardEvento
+                  id={1}
+                  date={new Date()}
+                  title={item.Title}
+                  description={item.Description}
+                  />
+                );
               })
             }
           </ul>
@@ -55,7 +57,7 @@ export default class Agenda extends React.Component<IAgendaProps, IAgendaState> 
   }
 
   public getEvents(){
-    pnp.sp.web.lists.getByTitle('Agenda').items.top(this.props.quantity).get()
+    pnp.sp.web.lists.getByTitle(this.props.list).items.top(this.props.quantity).get()
     .then((results) => {
       console.log(results);
       this.setState({
