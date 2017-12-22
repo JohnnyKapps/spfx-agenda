@@ -31,7 +31,7 @@ export default class Agenda extends React.Component<IAgendaProps, IAgendaState> 
         <div>
           <h1>Carregando items...</h1>
         </div>
-      )
+      );
     }
     else{
       return (
